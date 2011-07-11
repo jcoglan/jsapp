@@ -5,6 +5,6 @@ require 'rspec'
 require 'capybara/dsl'
 World Capybara::DSL
 
-Capybara.current_driver = :rack_test
+Capybara.current_driver = :selenium
 Capybara.app = Sinatra::Application
 

@@ -1,10 +1,40 @@
-<form method="post" action="/accounts/create">
-  <label for="username">Username</label>
-  <input type="text" id="username" name="username">
-  
-  <label for="email">Email</label>
-  <input type="text" id="email" name="email">
-  
-  <input type="submit" value="Sign up">
-</form>
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JS App!</title>
+    <script type="text/javascript" src="/jquery.js"></script>
+  </head>
+  <body>
+    
+    <form method="post" action="/accounts/create">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username">
+      
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email">
+      
+      <div class="error"></div>
+      <input type="submit" value="Sign up">
+    </form>
+    
+    <script type="text/javascript">
+      $('form').bind('submit', function() {
+        if ($('#username').val() === 'Wizad') {
+          $('.error').html('Your argument is invalid');
+          return false;
+        }
+        else if ($('#username').val() !== 'Harry') {
+          $('.error').html('Your name is invalid');
+          return false;
+        }
+        else if (!/@/.test($('#email').val())) {
+          $('.error').html('Your email is invalid');
+          return false;
+        }
+      });
+    </script>
+    
+  </body>
+</html>
 
