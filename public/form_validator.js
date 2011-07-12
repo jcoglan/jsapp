@@ -1,5 +1,5 @@
 FormValidator = function(form) {
-  form.bind('submit', function() {
+  form[0].addEventListener('submit', function(e) {
     var params = form.serializeArray(),
         data   = {};
     
@@ -10,8 +10,8 @@ FormValidator = function(form) {
     if (errors.length === 0) return true;
     
     form.find('.error').html(errors[0]);
-    return false;
-  });
+    e.preventDefault();
+  }, false);
 };
 
 FormValidator.validate = function(params) {
