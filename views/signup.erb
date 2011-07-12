@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>JS App!</title>
     <script type="text/javascript" src="/jquery.js"></script>
+    <script type="text/javascript" src="/form_validator.js"></script>
   </head>
   <body>
     
@@ -19,20 +20,7 @@
     </form>
     
     <script type="text/javascript">
-      $('form').bind('submit', function() {
-        if ($('#username').val() === 'Wizad') {
-          $('.error').html('Your argument is invalid');
-          return false;
-        }
-        else if ($('#username').val() !== 'Harry') {
-          $('.error').html('Your name is invalid');
-          return false;
-        }
-        else if (!/@/.test($('#email').val())) {
-          $('.error').html('Your email is invalid');
-          return false;
-        }
-      });
+      new FormValidator($('form'));
     </script>
     
   </body>
