@@ -7,25 +7,8 @@
   </head>
   <body>
     
-    <div id="fixture"></div>
-    
-    <script type="text/javascript">
-        JS.Packages(function() { with(this) {
-          
-          file('../public/jquery.js')
-              .provides('jQuery', '$')
-          
-          file('../public/form_validator.js')
-              .provides('FormValidator')
-              .requires('jQuery')
-          
-          autoload(/^(.*)Spec$/, {from: '../spec/javascript', require: '$1'})
-        }})
-        
-        JS.require('JS.Test', function() {
-          JS.require('FormValidatorSpec', JS.Test.method('autorun'))
-        })
-    </script>
+    <script type="text/javascript">CWD = '..'</script>
+    <script type="text/javascript" src="./runner.js"></script>
     
   </body>
 </html>
