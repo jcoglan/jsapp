@@ -38,5 +38,38 @@ JS.ENV.FormValidatorSpec = JS.Test.describe("FormValidator", function() { with(t
       assertEqual( ["Your argument is invalid"], errors )
     }})
   }})
+  
+  if (typeof document === 'undefined') return
+  
+  JS.ENV.FORM_HTML = '\
+            <form method="post" action="/accounts/create">\
+              <label for="username">Username</label>\
+              <input type="text" id="username" name="username">\
+              \
+              <label for="email">Email</label>\
+              <input type="text" id="email" name="email">\
+              \
+              <div class="error"></div>\
+              <input type="submit" value="Sign up">\
+            </form>'
+  
+  before(function() {
+    $("#fixture").html(FORM_HTML)
+    new FormValidator($("form"))
+    
+    this.submit = $("form input[type=submit]")
+    this.error  = $("form .error")
+  })
+  
+  describe("with an invalid name", function() { with(this) {
+    before(function() { with(this) {
+      $("#username").val("Hagrid")
+      submit.click()
+    }})
+    
+    it("displays an error message", function() { with(this) {
+      assertEqual( "Your name is invalid", error.html() )
+    }})
+  }})
 }})
 
