@@ -1,4 +1,6 @@
 JS.ENV.FormValidatorSpec = JS.Test.describe("FormValidator", function() { with(this) {
+  cover(FormValidator)
+  
   describe("with valid data", function() { with(this) {
     before(function() { with(this) {
       this.errors = FormValidator.validate({username: "Harry", email: "wizard@hogwarts.com"})
