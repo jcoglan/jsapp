@@ -1,17 +1,35 @@
 FormValidator = function(form) {
-  form[0].addEventListener('submit', function(e) {
-    var params = form.serializeArray(),
-        data   = {};
+  this._form = form[0];
+  var self = this;
+  
+  var handler = function(e) {
+    var success = self.handleSubmit(),
+        event   = e || window.event;
     
-    for (var i = 0, n = params.length; i < n; i++)
-      data[params[i].name] = params[i].value;
+    if (success) return;
     
-    var errors = FormValidator.validate(data);
-    if (errors.length === 0) return true;
-    
-    form.find('.error').html(errors[0]);
-    e.preventDefault();
-  }, false);
+    if (event.preventDefault) event.preventDefault();
+    event.returnValue = false;
+  };
+  
+  if (this._form.addEventListener)
+    this._form.addEventListener('submit', handler, false);
+  else
+    this._form.attachEvent('onsubmit', handler);
+};
+
+FormValidator.prototype.handleSubmit = function() {
+  var params = $(this._form).serializeArray(),
+      data   = {};
+  
+  for (var i = 0, n = params.length; i < n; i++)
+    data[params[i].name] = params[i].value;
+  
+  var errors = FormValidator.validate(data);
+  if (errors.length === 0) return true;
+  
+  $(this._form).find('.error').html(errors[0]);
+  return false;
 };
 
 FormValidator.validate = function(params) {
