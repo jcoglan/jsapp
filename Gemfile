@@ -9,3 +9,11 @@ group :development do
   gem "rspec"
 end
 
+group :terminus do
+  gem "faye"
+  gem "packr"
+  gem "rack-proxy"
+  gem "thin"
+  gem "useragent"
+end
+
