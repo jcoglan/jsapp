@@ -13,3 +13,17 @@ It's an app. With JavaScript.
     node spec/console.js
     open spec/browser.html
     phantomjs spec/phantom.js
+
+
+### Software used
+
+* [Sinatra](http://www.sinatrarb.com)
+* [Cucumber](http://cukes.info)
+* [Capybara](https://github.com/jnicklas/capybara)
+* [Rack::Test](https://github.com/brynary/rack-test)
+* [Selenium](http://seleniumhq.org)
+* [Terminus](http://github.com/jcoglan/terminus)
+* [jQuery](http://jquery.com)
+* [JS.Class](http://jsclass.jcoglan.com)
+* [JS.Test](http://jsclass.jcoglan.com/testing.html)
+* [PhantomJS](http://www.phantomjs.org)
