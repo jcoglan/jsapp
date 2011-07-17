@@ -13,7 +13,7 @@ my $USER = "jsapp";
 
 # Your authorization token.
 
-my $AUTH_TOKEN = "a962c548c22a591e8f150b9d9f6b673b6f212d08";
+my $AUTH_TOKEN = "95f5fe67805cc8049c61c8d242ce49c5e8c29dbf";
 
 # The maximum number of times you want the tests to be run.
 
