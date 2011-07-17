@@ -86,6 +86,7 @@ if ( $RCS_TYPE eq "svn" ) {
 } elsif ( $RCS_TYPE eq "git" ) {
 	print "git clone $RCS_URL $co_dir\n" if ( $DEBUG );
 	`git clone $RCS_URL $co_dir`;
+	`git checkout origin/demo`;
 }
 
 if ( ! -e $co_dir ) {
