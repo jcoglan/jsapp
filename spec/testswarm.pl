@@ -13,7 +13,7 @@ my $USER = "jsapp";
 
 # Your authorization token.
 
-my $AUTH_TOKEN = "95f5fe67805cc8049c61c8d242ce49c5e8c29dbf";
+my $AUTH_TOKEN = "12d8cf7e030ca45c35414e2bc13a3eaad5b2f5e2";
 
 # The maximum number of times you want the tests to be run.
 
@@ -86,7 +86,6 @@ if ( $RCS_TYPE eq "svn" ) {
 } elsif ( $RCS_TYPE eq "git" ) {
 	print "git clone $RCS_URL $co_dir\n" if ( $DEBUG );
 	`git clone $RCS_URL $co_dir`;
-	`git checkout origin/demo`;
 }
 
 if ( ! -e $co_dir ) {
@@ -104,6 +103,7 @@ if ( $RCS_TYPE eq "svn" ) {
 	$rev = `svn info | grep Revision`;
 	$rev =~ s/Revision: //;
 } elsif ( $RCS_TYPE eq "git" ) {
+	`git checkout origin/demo`;
 	print "git log --abbrev-commit | head -1\n" if ( $DEBUG );
 	$rev = `git log --abbrev-commit | head -1`;
 	$rev =~ s/commit.*?(\w+).*$/$1/;
