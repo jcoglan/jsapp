@@ -3,16 +3,19 @@
 It's an app. With JavaScript.
 
     git clone git://github.com/jcoglan/jsapp.git
+    bundle install
     cd jsapp
     git submodule update --init --recursive
     cd vendor/js.class
     jake
     cd ../..
     
-    cucumber features
+    cucumber features #make sure to start up terminus first
+      vendor/terminus/bin/terminus
+      open 127.0.0.1:7004
     node spec/console.js
     open spec/browser.html
-    phantomjs spec/phantom.js
+    phantomjs spec/phantom.js #note make sure you have phantomjs 1.2 installed
 
 
 ### Software used
