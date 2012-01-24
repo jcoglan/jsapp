@@ -1,4 +1,4 @@
-JSCLASS_PATH = 'vendor/js.class/build/src'
+JSCLASS_PATH = 'node_modules/jsclass/src'
 
 if (typeof require === 'function') {
   require('../' + JSCLASS_PATH + '/loader.js')

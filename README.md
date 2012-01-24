@@ -4,15 +4,21 @@ It's an app. With JavaScript.
 
     git clone git://github.com/jcoglan/jsapp.git
     cd jsapp
-    git submodule update --init --recursive
-    cd vendor/js.class
-    jake
-    cd ../..
+    bundle install
+    npm install jsclass
     
-    cucumber features
     node spec/console.js
     open spec/browser.html
     phantomjs spec/phantom.js
+
+To run the Cucumber features, you need Terminus running:
+
+    terminus
+
+In a second shell, run:
+
+    open http://localhost:7004/
+    cucumber features
 
 
 ### Software used
