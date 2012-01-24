@@ -1,6 +1,3 @@
 [submodule "vendor/js.class"]
 	path = vendor/js.class
 	url = git://github.com/jcoglan/js.class.git
-[submodule "vendor/terminus"]
-	path = vendor/terminus
-	url = git://github.com/jcoglan/terminus.git

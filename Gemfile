@@ -7,13 +7,6 @@ group :development do
   gem "cucumber"
   gem "rack-test"
   gem "rspec"
-end
-
-group :terminus do
-  gem "faye"
-  gem "packr"
-  gem "rack-proxy"
-  gem "thin"
-  gem "useragent"
+  gem "terminus"
 end
 

@@ -5,7 +5,7 @@ require 'rspec'
 require 'capybara/dsl'
 World Capybara::DSL
 
-require File.expand_path('../../../vendor/terminus/lib/terminus', __FILE__)
+require 'terminus'
 
 # Run ./vendor/terminus/bin/terminus and connect a browser first
 Capybara.current_driver = :terminus
